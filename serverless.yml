@@ -67,7 +67,7 @@ provider:
 
 functions:
   bye:
-    handler: goodbye.handler
+    handler: bye.handler
 #    environment:
 #      TABLE: ${self:custom.dynamodb.table}
 #      DBSERVICEPREFIX: ${self:custom.dbServicePrefix}
