@@ -1,0 +1,8 @@
+memorySize: 512
+vpc:
+  securityGroupIds:
+    - sg-someother
+  subnetIds:
+    - subnet-99999999
+    - subnet-00000000
+    - subnet-11111111

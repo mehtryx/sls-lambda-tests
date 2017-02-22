@@ -1,0 +1,84 @@
+# IMPORTANT - Please read comments
+# Customization of this file outside of the section marked for developers needs
+# to be communicated with Integration as the service which deploys these could
+# restrict access to making changes outside of these, including role assignments
+# and resources. If you need to add access to Dynamo, redis or other services
+# We will nead to make sure the role assigned has rights.
+#
+# For a smaple template, refer to https://github.com/Postmedia-Digital/jaws-config/blob/master/serverless.yml
+
+service: ${self:custom.servicePrefix}goodbye # Modify with your service name
+frameworkVersion: ">=1.5.0"
+
+custom:
+  # Custom configuration files managed by Integration
+  # When not present, the settings revert to defaults
+  config: ${file(./.jenkins/${self:provider.stage}_config.yml)}
+  servicePrefix: postmedia-api-
+  defaultStage: dev
+  profiles:  # profiles must be defined in your aws credentials file to work
+    xp: experimental # AWS Account 584374059506
+    dev: wcm-dev
+    qa: wcm-qa
+    staging: wcm-staging
+    prod: wcm-prod
+  # ---------------------------------------------------------------------------
+  # Additional service definitions can go here, many will be predefined in
+  # the config files to target specific resources for specific stages, you
+  # should be sure to confirm you have the right values with an Integrator
+  # for the target environment.  Examples of services:
+  # ---------------------------------------------------------------------------
+  # dynamodb:
+  #    table: ${self:custom.config.dynamodb.table}
+  #    dbServicePrefix: ${self:custom.servicePrefix}db-${self:provider.stage}-
+  # redis:
+  #    host: ${self:custom.config.redis.host}
+  #    port: ${self:custom.config.redis.port}
+  # s3:
+  #    bucket: ${self:custom.config.s3.bucket}
+  #    event: ${self:custom.config.s3.event}
+  #    rules:
+  #      - prefix: ${self:custom.config.s3.rules.prefix}
+  #      - suffix: ${self:custom.config.s3.rules.suffix}
+
+provider:
+  name: aws
+  runtime: nodejs4.3
+  stage:  ${opt:stage, self:custom.defaultStage}
+  profile: ${self:custom.profiles.${self:provider.stage}}
+  memorySize: ${self:custom.config.memorySize}
+  region: ${self:custom.config.region}
+  role: ${self:custom.config.role} # Note if needed we can configure function level roles
+
+# ----------------------------------------------------------------------------
+# DEVELOPERS - Modify content in this section only, unless you speak to
+# Integration about changes above first! Thanks!
+
+# Package exclusions should contain items that do not begin with a . (dot), this
+# includes files and folders like .gitignore, and .jenkins folder. Also, do not include
+# the test folder, coverage and node_modules that are only installed as dev_dependencies.
+#
+# This is because we we strip the above out at jenkins prior to deployment.
+# Please add a comment at end of exclussion to explain why it is being removed.
+#package:
+#  exclude:
+#    - node_modules/someModuleWeNeed/FolderWeDont/** # Removed as this folder is large, examnples only, reducing size of package.
+#    - node_modules/hapi/** #Removing because we may yet want this, so not listed as dev dependency only, for now reducing package size.
+
+functions:
+  bye:
+    handler: goodbye.handler
+#    environment:
+#      TABLE: ${self:custom.dynamodb.table}
+#      DBSERVICEPREFIX: ${self:custom.dbServicePrefix}
+#      REDIS_HOST: ${self:custom.redis.host}
+#      REDIS_PORT: ${self:custom.redis.port}
+#      CACHE: true
+#    events:
+#      - http:
+#          path: route_path
+#          method: post
+
+# Note you will have to ensure hte required plugins are installed
+#plugins:
+#  - serverless-offline
