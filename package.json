@@ -1,0 +1,25 @@
+{
+  "name": "sls-lambda-tests",
+  "version": "1.0.0",
+  "description": "A test repository for AWS lambdas with serverless",
+  "main": "bye.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mehtryx/sls-lambda-tests.git"
+  },
+  "keywords": [
+    "sls",
+    "aws",
+    "lambda",
+    "node"
+  ],
+  "author": "mehtryx",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mehtryx/sls-lambda-tests/issues"
+  },
+  "homepage": "https://github.com/mehtryx/sls-lambda-tests#readme"
+}
