@@ -80,5 +80,5 @@ functions:
 #          method: post
 
 # Note you will have to ensure hte required plugins are installed
-#plugins:
-#  - serverless-offline
+plugins:
+  - serverless-offline
