@@ -1,3 +1,5 @@
 memorySize: 128
-role: arn:aws:iam::584374059506:role/operations-lambda-execute
+role: {
+	arn:aws:iam::584374059506:role/operations-lambda-execute
+}
 region: us-east-1
