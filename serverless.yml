@@ -15,7 +15,7 @@ custom:
   # When not present, the settings revert to defaults
   config: ${file(./.jenkins/${self:provider.stage}_config.yml)}
   servicePrefix: postmedia-api-
-  defaultStage: dev
+  defaultStage: xp
   profiles:  # profiles must be defined in your aws credentials file to work
     xp: experimental # AWS Account 584374059506
     dev: wcm-dev
