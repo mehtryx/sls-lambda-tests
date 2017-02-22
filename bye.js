@@ -1,5 +1,6 @@
 'use strict';
 
+// Sample Lambda function
 module.exports.handler = (event, context, callback) => {
 	var name = (event.name ? event.name : "nameless" );
   	const response = {
