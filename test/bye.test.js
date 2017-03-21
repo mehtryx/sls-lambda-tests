@@ -2,7 +2,7 @@
 
 describe( 'bye', function() {
 	it('This is a test of tests. Good luck with that', function (done) {
-    var onePlusOne = frf;
+    var onePlusOne = module.exports.frf;
     onePlusOne.should.equal('fmj');
     done();
   });
