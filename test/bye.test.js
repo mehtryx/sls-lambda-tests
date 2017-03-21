@@ -6,4 +6,4 @@ describe( 'bye', function() {
     onePlusOne.should.equal(2);
     done();
   });
-};
+});
