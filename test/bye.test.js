@@ -1,4 +1,5 @@
 'use strict';
+const expect = require( 'chai' ).expect;
 
 describe( 'bye', function() {
 	it('This is a test of tests. Good luck with that', function (done) {
