@@ -1,5 +1,9 @@
 'use strict';
-
+function frf( request, BEDO ) {
+  // Build the Elastic queryStruct - the 3-d array used for searching
+  var frf = 'fmj';
+}
+module.exports.frf = frf;
 // Sample Lambda function
 module.exports.handler = (event, context, callback) => {
 	var name = (event.name ? event.name : "nameless" );
