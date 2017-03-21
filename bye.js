@@ -1,5 +1,5 @@
 'use strict';
-function frf( request, BEDO ) {
+function frf() {
   // Build the Elastic queryStruct - the 3-d array used for searching
   var frf = 'fmj';
 }
