@@ -24,7 +24,7 @@
   },
   "scripts": {
     "test": "mocha test",
-    "test": "JUNIT_REPORT_PATH=./report.xml mocha test --colors --reporter mocha-jenkins-reporter",
+    "testresult": "JUNIT_REPORT_PATH=./report.xml mocha test --colors --reporter mocha-jenkins-reporter",
     "start": "node ."
   },
   "keywords": [
