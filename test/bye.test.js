@@ -1,6 +1,6 @@
 'use strict';
 
-//Stuff
+//Once more with feeling
 
 const expect = require( 'chai' ).expect;
 const fmj = require( '../bye.js' );
