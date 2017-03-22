@@ -13,6 +13,7 @@
   "devDependencies": {
    "chai": "^3.5.0",
     "istanbul": "^0.4.5",
+    "mocha-jenkins-reporter": "0.3.7",
     "mocha": "^3.2.0"
   },
   "dependencies": {
@@ -22,7 +23,7 @@
     "postmedia-api-shared": "git+ssh://git@github.com/Postmedia-Digital/postmedia-api-shared.git#v0.1.1"
   },
   "scripts": {
-    "test": "istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec",
+    "test": "JUNIT_REPORT_PATH=/report.xml mocha --colors --reporter mocha-jenkins-reporter",
     "start": "node ."
   },
   "keywords": [
