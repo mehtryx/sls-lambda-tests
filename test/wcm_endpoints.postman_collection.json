@@ -1,0 +1,33 @@
+{
+	"variables": [],
+	"info": {
+		"name": "wcm_endpoints",
+		"_postman_id": "4b7e7dd3-a737-e1f2-af01-9831cf6a573d",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://dev.api.pddataservices.com/content/?q=politics",
+			"request": {
+				"url": "https://dev.api.pddataservices.com/content/?q=politics",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-api-key",
+						"value": "bb6208cfd887483a950164cbffdc0aabb6593626",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
