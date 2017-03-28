@@ -11,9 +11,9 @@ describe( 'bye', function() {
 	    expect( ayy ).to.eql( 'fmj' );
     	done();
   });
-	it('uh oh', function (done) {
+	it('bye again', function (done) {
 		var ayy = fmj.frf();
-    	expect( ayy ).to.eql( 'not fmj' )
+    	expect( ayy ).to.eql( 'fmj' )
     	done();
 	});
 });
