@@ -1,6 +1,6 @@
 'use strict';
 
-//Once more with feeling!
+//Two step test take 1
 
 const expect = require( 'chai' ).expect;
 const fmj = require( '../bye.js' );
