@@ -1,0 +1,147 @@
+{
+	"variables": [],
+	"info": {
+		"name": "wcm_licenses_endpoint",
+		"_postman_id": "446deb4b-4d37-393e-25ec-877b683a91d4",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "licenses",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"name\"] = responseBody.has(\"PDTech License QA\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://qa.api.pddataservices.com/licenses",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-api-key",
+						"value": "f06cb9645026f7b0dcbf92289f54e32b022b8883",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "licenses.deleted",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://qa.api.pddataservices.com/licenses/?status=deleted",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-api-key",
+						"value": "f06cb9645026f7b0dcbf92289f54e32b022b8883",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "licenses.id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"_id\"] = responseBody.has(\"4baa5cfa-5f51-4da3-ac8e-7fcea7391c2d\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://qa.api.pddataservices.com/licenses/4baa5cfa-5f51-4da3-ac8e-7fcea7391c2d",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-api-key",
+						"value": "f06cb9645026f7b0dcbf92289f54e32b022b8883",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "licenses.active",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"name\"] = responseBody.has(\"PDTech License QA\")",
+							"tests[\"status\"] = responseBody.has(\"active\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://qa.api.pddataservices.com/licenses/?status=active",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-api-key",
+						"value": "f06cb9645026f7b0dcbf92289f54e32b022b8883",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

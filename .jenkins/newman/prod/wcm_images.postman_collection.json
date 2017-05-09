@@ -1,0 +1,44 @@
+{
+	"variables": [],
+	"info": {
+		"name": "wcm_images",
+		"_postman_id": "647d0748-2074-0374-0bce-3233db12748b",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "images",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://api.pddataservices.com/images/?url=http%3A%2F%2Fwww.ottawacitizen.com%2Fentertainment%2Fcms%2Fbinary%2F13212431.jpg%3Fsize%3Dsw620x65",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-api-key",
+						"value": "f06cb9645026f7b0dcbf92289f54e32b022b8883",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
