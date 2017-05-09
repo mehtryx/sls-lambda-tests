@@ -1,0 +1,294 @@
+{
+	"variables": [],
+	"info": {
+		"name": "wcm_content_endpoint",
+		"_postman_id": "4b7e7dd3-a737-e1f2-af01-9831cf6a573d",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Content.0",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"Content-Type is present\"] = postman.getResponseHeader(\"Content-Type\");",
+							"tests[\"content\"] = responseBody.has(\"politics\");",
+							"tests[\"name\"] = responseBody.has(\"Politics\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://api.pddataservices.com/content/?q=politics",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-api-key",
+						"value": "f06cb9645026f7b0dcbf92289f54e32b022b8883",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Content.1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"content\"] = responseBody.has(\"murder\");",
+							"tests[\"name\"] = responseBody.has(\"Murder\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://api.pddataservices.com/content/?q=murder",
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "f06cb9645026f7b0dcbf92289f54e32b022b8883",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Content.origin_url_path",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"main\"] = responseBody.has(\"PWCM-753\");",
+							"tests[\"path\"] = responseBody.has(\"/Health/Women\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://api.pddataservices.com/content/path/health/women/pwcm-753",
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "f06cb9645026f7b0dcbf92289f54e32b022b8883",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Content.origin_url",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"content_elements\"] = responseBody.has(\"url\",\"_id\",\"type\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://api.pddataservices.com/content/url/http://new.nationalpost.wpdqa3.canada.com/health/women/pwcm-753",
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "f06cb9645026f7b0dcbf92289f54e32b022b8883",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Content.id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"_id\"] = responseBody.has(\"7ce5d532-27d4-4a18-8fa3-d7d693c449f2\");",
+							"tests[\"status\"] = responseBody.has(\"published\");",
+							"tests[\"channels\"] = responseBody.has(\"desktop\",\"tablet\",\"phone\");",
+							"tests[\"main_taxonomies\"] = responseBody.has(\"path\",\"type\",\"_id\",\"name\",\"slug\",\"main\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://api.pddataservices.com/content/7ce5d532-27d4-4a18-8fa3-d7d693c449f2",
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "f06cb9645026f7b0dcbf92289f54e32b022b8883",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Content.origincms.originid.wordpress",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"origin_id\"] = responseBody.has(\"1095565\");",
+							"tests[\"origin_cms\"] = responseBody.has(\"wordpress\");",
+							"tests[\"client_id\"] = responseBody.has(\"\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://api.pddataservices.com/content/wordpress/1095565",
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "f06cb9645026f7b0dcbf92289f54e32b022b8883",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Content.origincms.originid..southparc",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"client_id\"] = responseBody.has(\"cc759836-977c-41ee-b928-a718323895c7\");",
+							"tests[\"_id\"] = responseBody.has(\"58ba01279dd31703d40c4f75\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://api.pddataservices.com/content/southparc/12515387",
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "f06cb9645026f7b0dcbf92289f54e32b022b8883",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Content0.sb",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"origin_cms\"] = responseBody.has(\"\");",
+							"tests[\"origin_url_path\"] = responseBody.has(\"\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://api.pddataservices.com/content/?q=\"donald trump\"",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-api-key",
+						"value": "f06cb9645026f7b0dcbf92289f54e32b022b8883",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
