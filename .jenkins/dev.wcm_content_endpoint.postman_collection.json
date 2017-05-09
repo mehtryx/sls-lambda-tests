@@ -1,0 +1,268 @@
+{
+	"variables": [],
+	"info": {
+		"name": "wcm_content_endpoint",
+		"_postman_id": "4b7e7dd3-a737-e1f2-af01-9831cf6a573d",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Content0.dev",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"Content-Type is present\"] = postman.getResponseHeader(\"Content-Type\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://dev.api.pddataservices.com/content/?q=politics",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-api-key",
+						"value": "820bfbe264feb45f7880565f2a390ccfc2e934a4",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Content1.dev",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://dev.api.pddataservices.com/content/?q=murder",
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "820bfbe264feb45f7880565f2a390ccfc2e934a4",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Content.origin_url_path.dev",
+			"request": {
+				"url": "https://dev.api.pddataservices.com/content/path/movies/news-story-about-lollipops",
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "820bfbe264feb45f7880565f2a390ccfc2e934a4",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Content.origin_url.dev",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://dev.api.pddataservices.com/content/url/http://new.nationalpost.wpdev5.canada.com/movies/news-story-about-lollipops",
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "820bfbe264feb45f7880565f2a390ccfc2e934a4",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Content.id.dev",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://dev.api.pddataservices.com/content/75327028-81d1-4b03-9a75-382aff43a1f7",
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "820bfbe264feb45f7880565f2a390ccfc2e934a4",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Content.origincms.originid.wordpress.dev",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://dev.api.pddataservices.com/content/wordpress/1247487",
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "820bfbe264feb45f7880565f2a390ccfc2e934a4",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Content.origincms.originid..southparc.dev",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://dev.api.pddataservices.com/content/southparc/12455881",
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "820bfbe264feb45f7880565f2a390ccfc2e934a4",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Content0.sb.dev",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"Content-Type is present\"] = postman.getResponseHeader(\"Content-Type\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://dev.api.pddataservices.com/content/?q=\"donald trump\"",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-api-key",
+						"value": "820bfbe264feb45f7880565f2a390ccfc2e934a4",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
