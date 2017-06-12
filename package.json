@@ -23,8 +23,8 @@
     "postmedia-api-shared": "git+ssh://git@github.com/Postmedia-Digital/postmedia-api-shared.git#v0.1.1"
   },
   "scripts": {
-    "test": "mocha test",
-    "testresult": "JUNIT_REPORT_PATH=test/ mocha test --colors --reporter mocha-jenkins-reporter",
+    "testresult": "mocha test",
+    "test": "JUNIT_REPORT_PATH=test/ mocha test --colors --reporter mocha-jenkins-reporter",
     "start": "node ."
   },
   "keywords": [
